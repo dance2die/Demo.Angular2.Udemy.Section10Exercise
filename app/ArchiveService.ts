@@ -10,10 +10,14 @@ export class ArchiveService {
         ];
     }
 
-    getArchiveByYearMonth(year, month) {
-        var archive = {year: year, month: month};
+    getArchiveByYearMonth(archive) {
+        var found = (arc) => {
+            return {year: arc.year, month: arc.month};
+        };
 
-        var result = this.getArchives().find(archive);
+
+        var result = this.getArchives().find(found);
+        console.log(result);
         return result;
     }
 }

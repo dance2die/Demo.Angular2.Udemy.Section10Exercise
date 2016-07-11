@@ -14,7 +14,7 @@ import {ArchiveService} from "./ArchiveService";
         </ul>    
     `,
     providers: [ArchiveService],
-    directives: [ROUTER_DIRECTIVES];
+    directives: [ROUTER_DIRECTIVES]
 })
 export class ArchivesComponent implements OnInit {
     private archives = [];

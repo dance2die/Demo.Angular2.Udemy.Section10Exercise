@@ -5,7 +5,7 @@ import {ArchiveDetailsComponent} from "./ArchiveDetailsComponent";
 
 
 @RouteConfig([
-    {path: '/archives', name: 'Archives', component: ArchivesComponent},
+    {path: '/archives', name: 'Archives', component: ArchivesComponent, useAsDefault: true},
     {path: '/archives/:year/:month', name: 'ArchiveDetails', component: ArchiveDetailsComponent},
     {path: '/*other', name: 'Other', redirectTo: ['Archives']}
 ])

@@ -32,7 +32,7 @@ System.register(['angular2/core', 'angular2/router', "./ArchivesComponent", "./A
                 }
                 AppComponent = __decorate([
                     router_1.RouteConfig([
-                        { path: '/archives', name: 'Archives', component: ArchivesComponent_1.ArchivesComponent },
+                        { path: '/archives', name: 'Archives', component: ArchivesComponent_1.ArchivesComponent, useAsDefault: true },
                         { path: '/archives/:year/:month', name: 'ArchiveDetails', component: ArchiveDetailsComponent_1.ArchiveDetailsComponent },
                         { path: '/*other', name: 'Other', redirectTo: ['Archives'] }
                     ]),
