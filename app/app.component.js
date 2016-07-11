@@ -1,4 +1,6 @@
-System.register(['angular2/core'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', "./ArchivesComponent", "./ArchiveDetailsComponent"], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,26 +10,41 @@ System.register(['angular2/core'], function(exports_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, router_1, ArchivesComponent_1, ArchiveDetailsComponent_1;
     var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (router_1_1) {
+                router_1 = router_1_1;
+            },
+            function (ArchivesComponent_1_1) {
+                ArchivesComponent_1 = ArchivesComponent_1_1;
+            },
+            function (ArchiveDetailsComponent_1_1) {
+                ArchiveDetailsComponent_1 = ArchiveDetailsComponent_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
                 }
                 AppComponent = __decorate([
+                    router_1.RouteConfig([
+                        { path: '/archives', name: 'Archives', component: ArchivesComponent_1.ArchivesComponent },
+                        { path: '/archives/:year/:month', name: 'ArchiveDetails', component: ArchiveDetailsComponent_1.ArchiveDetailsComponent },
+                        { path: '/*other', name: 'Other', redirectTo: ['Archives'] }
+                    ]),
                     core_1.Component({
                         selector: 'my-app',
-                        templateUrl: '/app/app.component.html'
+                        templateUrl: '/app/app.component.html',
+                        directives: [router_1.ROUTER_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
                 return AppComponent;
-            })();
+            }());
             exports_1("AppComponent", AppComponent);
         }
     }
